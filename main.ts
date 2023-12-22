@@ -1,15 +1,43 @@
 //% weight=0 color=#bf9c32 icon="gigo-engine.png" block="GIGO DDM motor"
 namespace sensors {
-	//% blockId=DDMmotor block="Mcontrol pin %McontrolPin|direction of Mcontrol(0~1) %McontrolValue|MSpeed pin %MSpeedPin|speed of MSpeed(0~255) %MSpeedValue" blockExternalInputs=false
+
+	export enum MotorList {
+        //% block="E"
+        E,
+        //% block="F"
+        F,
+        //% block="G"
+        G,
+        //% block="H"
+       	H
+    }
+	//% blockId=DDMmotor block="Motor %motor|direction of Mcontrol(0~1) %McontrolValue|MSpeed pin %MSpeedPin|speed of MSpeed(0~255) %MSpeedValue" blockExternalInputs=false
     //% McontrolValue.min=0 McontrolValue.max=1 
 	//% MSpeedValue.min=0 MSpeedValue.max=255
-    //% McontrolPin.fieldEditor="gridpicker" McontrolPin.fieldOptions.columns=4
-    //% McontrolPin.fieldOptions.tooltips="false" McontrolPin.fieldOptions.width="300"
-	//% MSpeedPin.fieldEditor="gridpicker" MSpeedPin.fieldOptions.columns=4
-    //% MSpeedPin.fieldOptions.tooltips="false" MSpeedPin.fieldOptions.width="300"
+    //% motor.fieldEditor="gridpicker" McontrolPin.fieldOptions.columns=4
+    //% motor.fieldOptions.tooltips="false" McontrolPin.fieldOptions.width="300"
+	
+
+
+
     
-    export function DDMmotor(McontrolPin: AnalogPin,McontrolValue: number,MSpeedPin: AnalogPin,MSpeedValue: number): void {
-        pins.analogWritePin(McontrolPin, pins.map(McontrolValue, 0, 1, 0, 1023));
-        pins.analogWritePin(MSpeedPin, pins.map(MSpeedValue, 0, 255, 0, 1023));	   
+    export function DDMmotor(motor: Motorlist,McontrolValue: number,MSpeedValue: number): void {
+
+	        switch (motor) {
+            case MotorList.E:
+                pins.analogWritePin(AnalogPin.P15, pins.map(McontrolValue, 0, 1, 0, 1023));
+        	pins.analogWritePin(AnalogPin.P16, pins.map(MSpeedValue, 0, 255, 0, 1023));
+            case MotorList.F:
+              	pins.analogWritePin(AnalogPin.P13, pins.map(McontrolValue, 0, 1, 0, 1023));
+        	pins.analogWritePin(AnalogPin.P14, pins.map(MSpeedValue, 0, 255, 0, 1023));
+            case MotorList.G:
+                pins.analogWritePin(AnalogPin.P12, pins.map(McontrolValue, 0, 1, 0, 1023));
+        	pins.analogWritePin(AnalogPin.P2, pins.map(MSpeedValue, 0, 255, 0, 1023));
+            case MotorList.H:
+                pins.analogWritePin(AnalogPin.P8, pins.map(McontrolValue, 0, 1, 0, 1023));
+        	pins.analogWritePin(AnalogPin.P1, pins.map(MSpeedValue, 0, 255, 0, 1023));
+                }    
+	    
+   
     }
 }
