@@ -14,8 +14,8 @@ namespace sensors {
 	//% blockId=DDMmotor block="Motor %motor|direction of Mcontrol(0~1) %McontrolValue|MSpeed pin %MSpeedPin|speed of MSpeed(0~255) %MSpeedValue" blockExternalInputs=false
     //% McontrolValue.min=0 McontrolValue.max=1 
 	//% MSpeedValue.min=0 MSpeedValue.max=255
-    //% motor.fieldEditor="gridpicker" McontrolPin.fieldOptions.columns=4
-    //% motor.fieldOptions.tooltips="false" McontrolPin.fieldOptions.width="300"
+    //% motor.fieldEditor="gridpicker" Mmotor.fieldOptions.columns=4
+    //% motor.fieldOptions.tooltips="false" motor.fieldOptions.width="300"
 	
 
 
