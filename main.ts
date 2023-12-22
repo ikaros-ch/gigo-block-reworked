@@ -1,4 +1,4 @@
-//% weight=0 color=#bf9c32 icon="\uf2db" block="GIGO DDM motor"
+//% weight=0 color=#bf9c32 icon="gigo-engine.png" block="GIGO DDM motor"
 namespace sensors {
 	//% blockId=DDMmotor block="Mcontrol pin %McontrolPin|direction of Mcontrol(0~1) %McontrolValue|MSpeed pin %MSpeedPin|speed of MSpeed(0~255) %MSpeedValue" blockExternalInputs=false
     //% McontrolValue.min=0 McontrolValue.max=1 
