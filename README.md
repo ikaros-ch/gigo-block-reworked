@@ -12,5 +12,5 @@ Blocks provided by Gigo。reworked by me
 
 
 ```package
-sensors=github:gigotoys/gigo-block
+sensors=github:ikaros-ch/gigo-block-reworked
 ```
