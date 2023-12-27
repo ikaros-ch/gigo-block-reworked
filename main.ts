@@ -12,7 +12,7 @@ namespace sensors {
 		H
 	}
 
-	//% blockId=setmotorspeed block="Set Motor %motor Speed %speed" blockExternalInputs=false
+	//% blockId=setmotorspeed block="Set Motor %motor Speed %speed \\%" 
 	//% speed.min=-100 speed.max=100
 	export function DDMmotor(motor: MotorList, speed: number): void {
 		switch (motor) {
