@@ -1,4 +1,4 @@
-//% weight=0 color=#bf9c32 icon="\uf2db" block="GIGO DDM motor" 
+//% weight=8 color=#bf9c32 icon="\uf2db" block="GIGO DDM motor" 
 namespace sensors {
 
 	export enum MotorList {
@@ -27,15 +27,19 @@ namespace sensors {
             case MotorList.E:
                 pins.analogWritePin(AnalogPin.P15, pins.map(McontrolValue, 0, 1, 0, 1023));
         	pins.analogWritePin(AnalogPin.P16, pins.map(MSpeedValue, 0, 255, 0, 1023));
+		break;
             case MotorList.F:
               	pins.analogWritePin(AnalogPin.P13, pins.map(McontrolValue, 0, 1, 0, 1023));
         	pins.analogWritePin(AnalogPin.P14, pins.map(MSpeedValue, 0, 255, 0, 1023));
+		break;
             case MotorList.G:
                 pins.analogWritePin(AnalogPin.P12, pins.map(McontrolValue, 0, 1, 0, 1023));
         	pins.analogWritePin(AnalogPin.P2, pins.map(MSpeedValue, 0, 255, 0, 1023));
+		break;
             case MotorList.H:
                 pins.analogWritePin(AnalogPin.P8, pins.map(McontrolValue, 0, 1, 0, 1023));
         	pins.analogWritePin(AnalogPin.P1, pins.map(MSpeedValue, 0, 255, 0, 1023));
+		break;
                 }    
 	    
    
