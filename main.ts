@@ -21,7 +21,7 @@ namespace sensors {
 
 
     
-    export function DDMmotor(motor: Motorlist,McontrolValue: number,MSpeedValue: number): void {
+    export function DDMmotor(motor: MotorList,McontrolValue: number,MSpeedValue: number): void {
 
 	        switch (motor) {
             case MotorList.E:
