@@ -1,4 +1,4 @@
-//% weight=8 color=#bf9c32 icon="\uf2db" block="GIGO motors" 
+//% weight=8 color=#bf9c32 icon="\uf2db" block="GIGO Motors" 
 namespace sensors {
 
 	export enum MotorList {
@@ -67,3 +67,4 @@ namespace sensors {
 	        setMotorSpeed(MotorList.G, 0)
 	        setMotorSpeed(MotorList.H, 0)
 	}
+}
