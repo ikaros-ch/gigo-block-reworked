@@ -12,7 +12,7 @@ namespace sensors {
 		H
 	}
 
-	//% blockId=setmotorspeed block="Set Motor %motor Speed %speed \\%" 
+	//% blockId=setMotorSpeed block="Set Motor %motor Speed %speed \\%" 
 	//% speed.min=-100 speed.max=100
 	export function DDMmotor(motor: MotorList, speed: number): void {
 		
@@ -59,4 +59,11 @@ namespace sensors {
 				break;
 		}
 	}
-}
+	//% weight=85
+   	 //% blockId=stopAllMotor  block="Stop all motor"
+   	 export function stopAllMotor(): void {
+	        setMotorSpeed(MotorList.E, 0)
+	        setMotorSpeed(MotorList.F, 0)
+	        setMotorSpeed(MotorList.G, 0)
+	        setMotorSpeed(MotorList.H, 0)
+	}
