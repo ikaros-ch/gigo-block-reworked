@@ -1,7 +1,10 @@
 # sensors
 
-智高提供的積木方塊。
+Blocks for GIGO DDM motor(#1269 set V2) 
+
 Blocks provided by Gigo。reworked by me
+
+
 
 ## License
 
