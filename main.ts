@@ -62,9 +62,9 @@ namespace sensors {
 	//% weight=85
    	 //% blockId=stopAllMotor  block="Stop all motor"
    	 export function stopAllMotor(): void {
-	        setMotorSpeed(MotorList.E, 0)
-	        setMotorSpeed(MotorList.F, 0)
-	        setMotorSpeed(MotorList.G, 0)
-	        setMotorSpeed(MotorList.H, 0)
+	        DDMmotor(MotorList.E, 0)
+	        DDMmotor(MotorList.F, 0)
+	        DDMmotor(MotorList.G, 0)
+	        DDMmotor(MotorList.H, 0)
 	}
 }
