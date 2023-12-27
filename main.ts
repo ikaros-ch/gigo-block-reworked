@@ -51,11 +51,11 @@ namespace sensors {
 				break;
 			case MotorList.H:
 				if (speed >= 0) {
-					pins.digitalWritePin(DigitalPin.P8, 0);
+					pins.digitalWritePin(DigitalPin.P1, 0);
 				} else if (speed < 0) {
-					pins.digitalWritePin(DigitalPin.P8, 1);
+					pins.digitalWritePin(DigitalPin.P1, 1);
 				}
-				pins.analogWritePin(AnalogPin.P1, pins.map(Math.abs(speed), 0, 100, 0, 1023));
+				pins.analogWritePin(AnalogPin.P8, pins.map(Math.abs(speed), 0, 100, 0, 1023));
 				break;
 		}
 	}
