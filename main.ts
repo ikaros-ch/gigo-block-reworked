@@ -11,7 +11,7 @@ namespace sensors {
         	//% block="H"
        		H
     	}
-	//% blockId=DDMmotor block=" Set Motor %motor direction (0~1) %McontrolValue Speed(0~100) %MSpeedValue" blockExternalInputs=false
+	//% blockId=DDMmotor block=" Set Motor %motor direction  %McontrolValue Speed %MSpeedValue" blockExternalInputs=false
     	//% McontrolValue.min=0 McontrolValue.max=1 
 	//% MSpeedValue.min=0 MSpeedValue.max=100
 
