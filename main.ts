@@ -15,14 +15,15 @@ namespace sensors {
 	//% blockId=setmotorspeed block="Set Motor %motor Speed %speed \\%" 
 	//% speed.min=-100 speed.max=100
 	export function DDMmotor(motor: MotorList, speed: number): void {
-		switch (motor) {
-
-			if (speed > 100) {
+		
+		if (speed > 100) {
             			speed = 100
 		        }
-		        else if(speed < -100){
+		else if(speed < -100){
 		                speed = -100
 		        }
+		
+		switch (motor) {
 			
 			case MotorList.E:
 				if (speed >= 0) {
