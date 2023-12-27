@@ -16,6 +16,14 @@ namespace sensors {
 	//% speed.min=-100 speed.max=100
 	export function DDMmotor(motor: MotorList, speed: number): void {
 		switch (motor) {
+
+			if (speed > 100) {
+            			speed = 100
+		        }
+		        else if(speed < -100){
+		                speed = -100
+		        }
+			
 			case MotorList.E:
 				if (speed >= 0) {
 					pins.digitalWritePin(DigitalPin.P15, 0);
