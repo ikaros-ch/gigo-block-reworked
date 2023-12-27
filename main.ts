@@ -11,33 +11,49 @@ namespace sensors {
         	//% block="H"
        		H
     	}
-	//% blockId=DDMmotor block=" Set Motor %motor direction  %McontrolValue Speed %MSpeedValue" blockExternalInputs=false
-    	//% McontrolValue.min=0 McontrolValue.max=1 
-	//% MSpeedValue.min=0 MSpeedValue.max=100
+	//% blockId=setmotorspeed block=" Set Motor %motor Speed %speed" blockExternalInputs=false
+   
+	//% speed.min=-100 speed.max=100
 
 	
 
 
 
     
-    export function DDMmotor(motor: MotorList,McontrolValue: number,MSpeedValue: number): void {
+    export function DDMmotor(motor: MotorList,speed: number): void {
 
 	        switch (motor) {
             case MotorList.E:
-                pins.analogWritePin(AnalogPin.P15, pins.map(McontrolValue, 0, 1, 0, 1023));
-        	pins.analogWritePin(AnalogPin.P16, pins.map(MSpeedValue, 0, 100, 0, 1023));
+		if (speed >= 0){
+			pins.digitalWritePin(DigitalPin.P15, 0)
+		else if (speed < 0){
+			pins.digitalWritePin(DigitalPin.P15, 1)
+		}
+		pins.analogWritePin(AnalogPin.P16, pins.map(Math.abs(speed), 0, 100, 0, 1023));
 		break;
             case MotorList.F:
-              	pins.analogWritePin(AnalogPin.P13, pins.map(McontrolValue, 0, 1, 0, 1023));
-        	pins.analogWritePin(AnalogPin.P14, pins.map(MSpeedValue, 0, 100, 0, 1023));
+              	if (speed >= 0){
+			pins.digitalWritePin(DigitalPin.P13, 0)
+		else if (speed < 0){
+			pins.digitalWritePin(DigitalPin.P13, 1)
+		}
+        	pins.analogWritePin(AnalogPin.P14, pins.map(Math.abs(speed), 0, 100, 0, 1023));
 		break;
             case MotorList.G:
-                pins.analogWritePin(AnalogPin.P12, pins.map(McontrolValue, 0, 1, 0, 1023));
-        	pins.analogWritePin(AnalogPin.P2, pins.map(MSpeedValue, 0, 100, 0, 1023));
+              	if (speed >= 0){
+			pins.digitalWritePin(DigitalPin.P12, 0)
+		else if (speed < 0){
+			pins.digitalWritePin(DigitalPin.P12, 1)
+		}
+        	pins.analogWritePin(AnalogPin.P2, pins.map(Math.abs(speed), 0, 100, 0, 1023));
 		break;
             case MotorList.H:
-                pins.analogWritePin(AnalogPin.P8, pins.map(McontrolValue, 0, 1, 0, 1023));
-        	pins.analogWritePin(AnalogPin.P1, pins.map(MSpeedValue, 0, 100, 0, 1023));
+              	if (speed >= 0){
+			pins.digitalWritePin(DigitalPin.P8, 0)
+		else if (speed < 0){
+			pins.digitalWritePin(DigitalPin.P8, 1)
+		}
+        	pins.analogWritePin(AnalogPin.P1, pins.map(Math.abs(speed), 0, 100, 0, 1023));
 		break;
                 }    
 	    
