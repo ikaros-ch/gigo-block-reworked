@@ -94,7 +94,7 @@ namespace sensors {
 
 			case SensorPortList.P1:
 				
-		        	if (pins.digitalReadPin(DigitalPin.P1) == 1) {
+		        	if (pins.digitalReadPin(DigitalPin.P1) == 0) {
 		            		return false
 		        	}
 		        	else {
@@ -105,7 +105,7 @@ namespace sensors {
 			case SensorPortList.P8:
 				
 				
-		        	if (pins.digitalReadPin(DigitalPin.P8) == 1) {
+		        	if (pins.digitalReadPin(DigitalPin.P8) == 0) {
 		            		return false
 		        	}
 		        	else {
@@ -115,7 +115,7 @@ namespace sensors {
 			case SensorPortList.P12:
 				
 				
-		        	if (pins.digitalReadPin(DigitalPin.P12) == 1) {
+		        	if (pins.digitalReadPin(DigitalPin.P12) == 0) {
 		            		return false
 		        	}
 		        	else {
@@ -125,7 +125,7 @@ namespace sensors {
 			case SensorPortList.P2:
 				
 				
-		        	if (pins.digitalReadPin(DigitalPin.P2) == 1) {
+		        	if (pins.digitalReadPin(DigitalPin.P2) == 0) {
 		            		return false
 		        	}
 		        	else {
@@ -135,7 +135,7 @@ namespace sensors {
 			case SensorPortList.P13:
 				
 				
-		        	if (pins.digitalReadPin(DigitalPin.P13) == 1) {
+		        	if (pins.digitalReadPin(DigitalPin.P13) == 0) {
 		            		return false
 		        	}
 		        	else {
@@ -145,7 +145,7 @@ namespace sensors {
 			case SensorPortList.P14:
 				
 				
-		        	if (pins.digitalReadPin(DigitalPin.P14) == 1) {
+		        	if (pins.digitalReadPin(DigitalPin.P14) == 0) {
 		            		return false
 		        	}
 		        	else {
@@ -155,7 +155,7 @@ namespace sensors {
 			case SensorPortList.P15:
 				
 				
-		        	if (pins.digitalReadPin(DigitalPin.P15) == 1) {
+		        	if (pins.digitalReadPin(DigitalPin.P15) == 0) {
 		            		return true
 		        	}
 		        	else {
@@ -165,7 +165,7 @@ namespace sensors {
 			case SensorPortList.P16:
 				
 				
-		        	if (pins.digitalReadPin(DigitalPin.P16) == 1) {
+		        	if (pins.digitalReadPin(DigitalPin.P16) == 0) {
 		            		return true
 		        	}
 		        	else {
