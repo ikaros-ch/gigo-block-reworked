@@ -282,7 +282,7 @@ namespace sensors {
     		}
 	}
 	//% blockId="ForceSensor" block="Force sensor %port pushed"
-	export function IR (port: DualPortList): boolean {
+	export function ForceSensor (port: DualPortList): boolean {
 		switch(pinout){	
 
 			case DualPortList.E:
