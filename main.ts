@@ -40,7 +40,7 @@ namespace sensors {
 		
 	}
 
-	export enum MotorList {
+	export enum DualPortList {
 		//% block="E"
 		E,
 		//% block="F"
@@ -53,7 +53,7 @@ namespace sensors {
 
 	//% blockId=setMotorSpeed block="Set Motor %motor Speed %speed \\%" 
 	//% speed.min=-100 speed.max=100
-	export function DDMmotor(motor: MotorList, speed: number): void {
+	export function DDMmotor(motor: DualPortList, speed: number): void {
 		
 		if (speed > 100) {
             			speed = 100
@@ -64,7 +64,7 @@ namespace sensors {
 		
 		switch (motor) {
 			
-			case MotorList.E:
+			case DualPortList.E:
 				if (speed >= 0) {
 					pins.digitalWritePin(DigitalPin.P15, 0);
 				} else if (speed < 0) {
@@ -72,7 +72,7 @@ namespace sensors {
 				}
 				pins.analogWritePin(AnalogPin.P16, pins.map(Math.abs(speed), 0, 100, 0, 1023));
 				break;
-			case MotorList.F:
+			case DualPortList.F:
 				if (speed >= 0) {
 					pins.digitalWritePin(DigitalPin.P13, 0);
 				} else if (speed < 0) {
@@ -80,7 +80,7 @@ namespace sensors {
 				}
 				pins.analogWritePin(AnalogPin.P14, pins.map(Math.abs(speed), 0, 100, 0, 1023));
 				break;
-			case MotorList.G:
+			case DualPortList.G:
 				if (speed >= 0) {
 					pins.digitalWritePin(DigitalPin.P12, 0);
 				} else if (speed < 0) {
@@ -88,7 +88,7 @@ namespace sensors {
 				}
 				pins.analogWritePin(AnalogPin.P2, pins.map(Math.abs(speed), 0, 100, 0, 1023));
 				break;
-			case MotorList.H:
+			case DualPortList.H:
 				if (speed >= 0) {
 					pins.digitalWritePin(DigitalPin.P1, 0);
 				} else if (speed < 0) {
@@ -101,12 +101,12 @@ namespace sensors {
 	//% weight=85
    	 //% blockId=stopAllMotor  block="Stop all motors"
    	 export function stopAllMotor(): void {
-	        DDMmotor(MotorList.E, 0)
-	        DDMmotor(MotorList.F, 0)
-	        DDMmotor(MotorList.G, 0)
-	        DDMmotor(MotorList.H, 0)
+	        DDMmotor(DualPortList.E, 0)
+	        DDMmotor(DualPortList.F, 0)
+	        DDMmotor(DualPortList.G, 0)
+	        DDMmotor(DualPortList.H, 0)
 	}
-	//% blockId="IR" block="IR sensor %pin detects obstacle"
+	//% blockId="IR" block="IR sensor %pinout detects obstacle"
 	export function IR (pinout: SensorPortList): boolean {
 
 		switch(pinout){	
@@ -194,7 +194,7 @@ namespace sensors {
 		}
 	}
 
-	 //% blockId=LED block="LED %pin toggle to $ledstate || brightness %brightness \\%"
+	 //% blockId=LED block="LED %port toggle to $ledstate || brightness %brightness \\%"
    	 //% brightness.min=0 brightness.max=100
    	 //% ledstate.shadow="toggleOnOff"
    	 //% expandableArgumentMode="toggle"
@@ -280,6 +280,53 @@ namespace sensors {
 			break;
 			
     		}
+	}
+	//% blockId="ForceSensor" block="Force sensor %port pushed"
+	export function IR (port: DualPortList): boolean {
+		switch(pinout){	
+
+			case DualPortList.E:
+				pins.setPull(DigitalPin.P16, PinPullMode.PullUp)
+		        	if (pins.digitalReadPin(DigitalPin.P16) == 0) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				pins.setPull(DigitalPin.P16, PinPullMode.PullNone)
+				break;
+				
+			case DualPortList.F:
+				pins.setPull(DigitalPin.P14, PinPullMode.PullUp)
+		        	if (pins.digitalReadPin(DigitalPin.P14) == 0) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				pins.setPull(DigitalPin.P14, PinPullMode.PullNone)
+				break;
+			case DualPortList.G:
+				pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
+		        	if (pins.digitalReadPin(DigitalPin.P2) == 0) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				pins.setPull(DigitalPin.P2, PinPullMode.PullNone)
+				break;
+			case DualPortList.H:
+				pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
+		        	if (pins.digitalReadPin(DigitalPin.P8) == 0) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				pins.setPull(DigitalPin.P8, PinPullMode.PullNone)
+				break;
+		}
 	}
 
 }
