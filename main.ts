@@ -198,9 +198,9 @@ namespace sensors {
    	 //% brightness.min=0 brightness.max=100
    	 //% ledstate.shadow="toggleOnOff"
    	 //% expandableArgumentMode="toggle"
-	export function ledBrightness(pin: LedPortList, ledstate: boolean, brightness: number = 100): void {
+	export function ledBrightness(port: LedPortList, ledstate: boolean, brightness: number = 100): void {
 
-	switch(LedPortList){
+	switch(port){
 
 		case LedPortList.B:
         		if (ledstate) {
