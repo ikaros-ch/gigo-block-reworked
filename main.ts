@@ -96,4 +96,5 @@ namespace sensors {
         else {
             return false
         }
+	}
 }
