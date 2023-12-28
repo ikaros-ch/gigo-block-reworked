@@ -1,6 +1,26 @@
 //% weight=8 color=#bf9c32 icon="\uf2db" block="GIGO Motors" 
 namespace sensors {
 
+	export enum SensorPortList {
+		//% block="P1(Analog)"
+		P1,
+		//% block="P8"
+		P8,
+		//% block="P12"
+		P12,
+		//% block="P2(Analog)"
+		P2,
+		//% block="P13"
+		P13,
+		//% block="P14"
+		P14,
+		//% block="P15"
+		P15,
+		//% block="P16"
+		P16,
+		
+	}
+
 	export enum MotorList {
 		//% block="E"
 		E,
@@ -67,4 +87,13 @@ namespace sensors {
 	        DDMmotor(MotorList.G, 0)
 	        DDMmotor(MotorList.H, 0)
 	}
+	//% blockId="IR" block="IR sensor %pin detects something"
+	export function IR (pin: SensorPortList): boolean {
+			
+        if (pins.digitalReadPin(pin) == 1) {
+            return true
+        }
+        else {
+            return false
+        }
 }
