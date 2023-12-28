@@ -1,4 +1,4 @@
-//% weight=8 color=#bf9c32 icon="\uf2db" block="GIGO Motors" 
+//% weight=8 color=#ed922b icon="\uf2db" block="GIGO Motors" 
 namespace sensors {
 
 	export enum SensorPortList {
@@ -95,10 +95,10 @@ namespace sensors {
 			case SensorPortList.P1:
 				
 		        	if (pins.digitalReadPin(DigitalPin.P1) == 0) {
-		            		return false
+		            		return true
 		        	}
 		        	else {
-		            		return true
+		            		return false
 		       		}
 				break;
 				
@@ -106,27 +106,27 @@ namespace sensors {
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P8) == 0) {
-		            		return false
+		            		return true
 		        	}
 		        	else {
-		            		return true
+		            		return false
 		       		}
 				break;
 			case SensorPortList.P12:
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P12) == 0) {
-		            		return false
+		            		return true
 		        	}
 		        	else {
-		            		return true
+		            		return false
 		       		}
 				break;
 			case SensorPortList.P2:
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P2) == 0) {
-		            		return false
+		            		return true
 		        	}
 		        	else {
 		            		return false
@@ -136,7 +136,7 @@ namespace sensors {
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P13) == 0) {
-		            		return false
+		            		return true
 		        	}
 		        	else {
 		            		return false
@@ -146,7 +146,7 @@ namespace sensors {
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P14) == 0) {
-		            		return false
+		            		return true
 		        	}
 		        	else {
 		            		return false
