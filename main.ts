@@ -3,19 +3,19 @@ namespace sensors {
 
 	export enum LedPortList {
 
-		//% block="B"
+		//% block="B(P14)"
 		B,
-		//% block="C"
+		//% block="C(P2)"
 		C,
-		//% block="D"
+		//% block="D(P8)"
 		D,
-		//% block="E"
+		//% block="E(P16,P15)"
 		E,
-		//% block="F"
+		//% block="F(P14,P13)"
 		F,
-		//% block="G"
+		//% block="G(P2,P12)"
 		G,
-		//% block="H"
+		//% block="H(P8,P1)"
 		H
 
 	}
@@ -41,13 +41,13 @@ namespace sensors {
 	}
 
 	export enum DualPortList {
-		//% block="E"
+		//% block="E(P16,P15)"
 		E,
-		//% block="F"
+		//% block="F(P14,P13)"
 		F,
-		//% block="G"
+		//% block="G(P2,P12)"
 		G,
-		//% block="H"
+		//% block="H(P8,P1)"
 		H
 	}
 
