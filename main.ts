@@ -1,6 +1,25 @@
 //% weight=8 color=#ed922b icon="\uf2db" block="GIGO Motors" 
 namespace sensors {
 
+	export enum LedPortList {
+
+		//% block="B"
+		B,
+		//% block="C"
+		C,
+		//% block="D"
+		D,
+		//% block="E"
+		E,
+		//% block="F"
+		F,
+		//% block="G"
+		G,
+		//% block="H"
+		H
+
+	}
+
 	export enum SensorPortList {
 		//% block="P1(Analog)"
 		P1,
@@ -174,4 +193,93 @@ namespace sensors {
 				break;
 		}
 	}
+
+	 //% blockId=LED block="LED %pin toggle to $ledstate || brightness %brightness \\%"
+   	 //% brightness.min=0 brightness.max=100
+   	 //% ledstate.shadow="toggleOnOff"
+   	 //% expandableArgumentMode="toggle"
+	export function ledBrightness(pin: LedPortList, ledstate: boolean, brightness: number = 100): void {
+
+	switch(LedPortList){
+
+		case LedPortList.B:
+        		if (ledstate) {
+		            pins.analogSetPeriod(AnalogPin.P14, 100)
+		            pins.analogWritePin(AnalogPin.P14, Math.map(brightness, 0, 100, 0, 1023))
+		        }
+        		else {
+		            pins.analogWritePin(AnalogPin.P14, 0)
+		            brightness = 0
+        		}
+			break;
+
+		case LedPortList.C:
+        		if (ledstate) {
+		            pins.analogSetPeriod(AnalogPin.P2, 100)
+		            pins.analogWritePin(AnalogPin.P2, Math.map(brightness, 0, 100, 0, 1023))
+		        }
+        		else {
+		            pins.analogWritePin(AnalogPin.P2, 0)
+		            brightness = 0
+        		}
+			break;
+
+		case LedPortList.D:
+        		if (ledstate) {
+		            pins.analogSetPeriod(AnalogPin.P8, 100)
+		            pins.analogWritePin(AnalogPin.P8, Math.map(brightness, 0, 100, 0, 1023))
+		        }
+        		else {
+		            pins.analogWritePin(AnalogPin.P8, 0)
+		            brightness = 0
+        		}
+			break;
+
+		case LedPortList.E:
+        		if (ledstate) {
+		            pins.analogSetPeriod(AnalogPin.P15, 100)
+		            pins.analogWritePin(AnalogPin.P15, Math.map(brightness, 0, 100, 0, 1023))
+		        }
+        		else {
+		            pins.analogWritePin(AnalogPin.P15, 0)
+		            brightness = 0
+        		}
+			break;
+
+		case LedPortList.F:
+        		if (ledstate) {
+		            pins.analogSetPeriod(AnalogPin.P13, 100)
+		            pins.analogWritePin(AnalogPin.P13, Math.map(brightness, 0, 100, 0, 1023))
+		        }
+        		else {
+		            pins.analogWritePin(AnalogPin.P13, 0)
+		            brightness = 0
+        		}
+			break;
+
+		case LedPortList.G:
+        		if (ledstate) {
+		            pins.analogSetPeriod(AnalogPin.P12, 100)
+		            pins.analogWritePin(AnalogPin.P12, Math.map(brightness, 0, 100, 0, 1023))
+		        }
+        		else {
+		            pins.analogWritePin(AnalogPin.P12, 0)
+		            brightness = 0
+        		}
+			break;
+
+		case LedPortList.H:
+        		if (ledstate) {
+		            pins.analogSetPeriod(AnalogPin.P1, 100)
+		            pins.analogWritePin(AnalogPin.P1, Math.map(brightness, 0, 100, 0, 1023))
+		        }
+        		else {
+		            pins.analogWritePin(AnalogPin.P1, 0)
+		            brightness = 0
+        		}
+			break;
+			
+    		}
+	}
+
 }
