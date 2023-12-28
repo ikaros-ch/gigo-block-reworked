@@ -80,21 +80,97 @@ namespace sensors {
 		}
 	}
 	//% weight=85
-   	 //% blockId=stopAllMotor  block="Stop all motor"
+   	 //% blockId=stopAllMotor  block="Stop all motors"
    	 export function stopAllMotor(): void {
 	        DDMmotor(MotorList.E, 0)
 	        DDMmotor(MotorList.F, 0)
 	        DDMmotor(MotorList.G, 0)
 	        DDMmotor(MotorList.H, 0)
 	}
-	//% blockId="IR" block="IR sensor %pin detects something"
-	export function IR (pin: SensorPortList): boolean {
-			
-        if (pins.digitalReadPin(pin) == 1) {
-            return true
-        }
-        else {
-            return false
-        }
+	//% blockId="IR" block="IR sensor %pin detects obstacle"
+	export function IR (pinout: SensorPortList): boolean {
+
+		switch(pinout){	
+
+			case SensorPortList.P1:
+				
+		        	if (pins.digitalReadPin(DigitalPin.P1) == 1) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				break;
+				
+			case SensorPortList.P8:
+				
+				
+		        	if (pins.digitalReadPin(DigitalPin.P8) == 1) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				break;
+			case SensorPortList.P12:
+				
+				
+		        	if (pins.digitalReadPin(DigitalPin.P12) == 1) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				break;
+			case SensorPortList.P2:
+				
+				
+		        	if (pins.digitalReadPin(DigitalPin.P2) == 1) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				break;
+			case SensorPortList.P13:
+				
+				
+		        	if (pins.digitalReadPin(DigitalPin.P13) == 1) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				break;
+			case SensorPortList.P14:
+				
+				
+		        	if (pins.digitalReadPin(DigitalPin.P14) == 1) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				break;
+			case SensorPortList.P15:
+				
+				
+		        	if (pins.digitalReadPin(DigitalPin.P15) == 1) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				break;
+			case SensorPortList.P16:
+				
+				
+		        	if (pins.digitalReadPin(DigitalPin.P16) == 1) {
+		            		return true
+		        	}
+		        	else {
+		            		return false
+		       		}
+				break;
 	}
 }
