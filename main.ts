@@ -283,7 +283,7 @@ namespace sensors {
 	}
 	//% blockId="ForceSensor" block="Force sensor %port pushed"
 	export function ForceSensor (port: DualPortList): boolean {
-		switch(pinout){	
+		switch(port){	
 
 			case DualPortList.E:
 				pins.setPull(DigitalPin.P16, PinPullMode.PullUp)
