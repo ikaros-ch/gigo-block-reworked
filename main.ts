@@ -95,10 +95,10 @@ namespace sensors {
 			case SensorPortList.P1:
 				
 		        	if (pins.digitalReadPin(DigitalPin.P1) == 1) {
-		            		return true
+		            		return false
 		        	}
 		        	else {
-		            		return false
+		            		return true
 		       		}
 				break;
 				
@@ -106,27 +106,27 @@ namespace sensors {
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P8) == 1) {
-		            		return true
+		            		return false
 		        	}
 		        	else {
-		            		return false
+		            		return true
 		       		}
 				break;
 			case SensorPortList.P12:
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P12) == 1) {
-		            		return true
+		            		return false
 		        	}
 		        	else {
-		            		return false
+		            		return true
 		       		}
 				break;
 			case SensorPortList.P2:
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P2) == 1) {
-		            		return true
+		            		return false
 		        	}
 		        	else {
 		            		return false
@@ -136,7 +136,7 @@ namespace sensors {
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P13) == 1) {
-		            		return true
+		            		return false
 		        	}
 		        	else {
 		            		return false
@@ -146,7 +146,7 @@ namespace sensors {
 				
 				
 		        	if (pins.digitalReadPin(DigitalPin.P14) == 1) {
-		            		return true
+		            		return false
 		        	}
 		        	else {
 		            		return false
