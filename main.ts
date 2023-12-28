@@ -172,5 +172,6 @@ namespace sensors {
 		            		return false
 		       		}
 				break;
+		}
 	}
 }
