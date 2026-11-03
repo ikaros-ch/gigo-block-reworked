@@ -1,7 +1,7 @@
 {
-    "name": "GIGO DDM motor ",
-    "version": "0.0.1",
-    "description": "Blocks provided by Gigo, Reworked by ikaros-ch",
+    "name": "gigo-ddm",
+    "version": "1.0.0",
+    "description": "GIGO #1269 micro:bit robotics set: DDM motors, IR, LED and force sensors (reworked gigo-block)",
     "license": "MIT",
     "dependencies": {
         "core": "*"
@@ -9,9 +9,18 @@
     "files": [
         "README.md",
         "main.ts",
-         "_locales/zh-cn/sensors-strings.json",
-        "_locales/zh-tw/sensors-strings.json",
-        "_locales/el/sensors-strings.json"
+        "docs/ddm-motor.md",
+        "docs/force-sensor.md",
+        "docs/ir-sensor.md",
+        "docs/led-brightness.md",
+        "docs/stop-all-motor.md",
+        "_locales/el/gigo-ddm-strings.json"
     ],
-    "public": true
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
 }

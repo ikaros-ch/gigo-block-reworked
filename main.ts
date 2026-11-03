@@ -1,59 +1,69 @@
-//% weight=8 color=#ed922b icon="\uf2db" block="GIGO Motors" 
+/**
+ * GIGO #1269 Robotics Workshop (micro:bit) blocks: DDM motors, IR, LED and force sensors.
+ * Based on https://github.com/gigotoys/gigo-block (MIT), reworked by ikaros-ch.
+ */
+//% weight=8 color=#ed922b icon="\uf2db" block="GIGO Motors"
 namespace sensors {
 
 	export enum LedPortList {
 
-		//% block="B(P14)"
+	//% block="B(P14)"
 		B,
-		//% block="C(P2)"
+	//% block="C(P2)"
 		C,
-		//% block="D(P8)"
+	//% block="D(P8)"
 		D,
-		//% block="E(P16,P15)"
+	//% block="E(P16,P15)"
 		E,
-		//% block="F(P14,P13)"
+	//% block="F(P14,P13)"
 		F,
-		//% block="G(P2,P12)"
+	//% block="G(P2,P12)"
 		G,
-		//% block="H(P8,P1)"
+	//% block="H(P8,P1)"
 		H
 
 	}
 
 	export enum SensorPortList {
-		//% block="P1(Analog)"
+	//% block="P1(Analog)"
 		P1,
-		//% block="P8"
+	//% block="P8"
 		P8,
-		//% block="P12"
+	//% block="P12"
 		P12,
-		//% block="P2(Analog)"
+	//% block="P2(Analog)"
 		P2,
-		//% block="P13"
+	//% block="P13"
 		P13,
-		//% block="P14"
+	//% block="P14"
 		P14,
-		//% block="P15"
+	//% block="P15"
 		P15,
-		//% block="P16"
+	//% block="P16"
 		P16,
 		
 	}
 
 	export enum DualPortList {
-		//% block="E(P16,P15)"
+	//% block="E(P16,P15)"
 		E,
-		//% block="F(P14,P13)"
+	//% block="F(P14,P13)"
 		F,
-		//% block="G(P2,P12)"
+	//% block="G(P2,P12)"
 		G,
-		//% block="H(P8,P1)"
+	//% block="H(P8,P1)"
 		H
 	}
 
-	//% blockId=setMotorSpeed block="Set Motor %motor Speed %speed \\%" 
+	/**
+	 * Run a DDM (50x planetary gearbox) motor plugged into a dual port. Negative speeds run it backwards.
+	 * @param motor the dual port the motor is plugged into
+	 * @param speed speed from -100 to 100, eg: 50
+	 */
+	//% blockId=setMotorSpeed block="set motor %motor speed %speed \\%" 
 	//% speed.min=-100 speed.max=100
-	export function DDMmotor(motor: DualPortList, speed: number): void {
+	//% help=github:gigo-ddm/docs/ddm-motor
+	export function ddmMotor(motor: DualPortList, speed: number): void {
 		
 		if (speed > 100) {
             			speed = 100
@@ -99,15 +109,24 @@ namespace sensors {
 		}
 	}
 	//% weight=85
-   	 //% blockId=stopAllMotor  block="Stop all motors"
-   	 export function stopAllMotor(): void {
-	        DDMmotor(DualPortList.E, 0)
-	        DDMmotor(DualPortList.F, 0)
-	        DDMmotor(DualPortList.G, 0)
-	        DDMmotor(DualPortList.H, 0)
+	/**
+	 * Stop the motors on all four dual ports.
+	 */
+	//% blockId=stopAllMotor block="stop all motors"
+	//% help=github:gigo-ddm/docs/stop-all-motor
+	export function stopAllMotor(): void {
+	        ddmMotor(DualPortList.E, 0)
+	        ddmMotor(DualPortList.F, 0)
+	        ddmMotor(DualPortList.G, 0)
+	        ddmMotor(DualPortList.H, 0)
 	}
+	/**
+	 * True when the IR sensor sees an obstacle in front of it.
+	 * @param pinout the port the IR sensor is plugged into
+	 */
 	//% blockId="IR" block="IR sensor %pinout detects obstacle"
-	export function IR (pinout: SensorPortList): boolean {
+	//% help=github:gigo-ddm/docs/ir-sensor
+	export function irSensor(pinout: SensorPortList): boolean {
 
 		switch(pinout){	
 
@@ -194,10 +213,17 @@ namespace sensors {
 		}
 	}
 
-	 //% blockId=LED block="LED %port toggle to $ledstate || brightness %brightness \\%"
-   	 //% brightness.min=0 brightness.max=100
-   	 //% ledstate.shadow="toggleOnOff"
-   	 //% expandableArgumentMode="toggle"
+	/**
+	 * Turn an LED module on or off, with optional brightness.
+	 * @param port the port the LED is plugged into
+	 * @param ledstate true to turn it on, eg: true
+	 * @param brightness brightness from 0 to 100, eg: 100
+	 */
+	//% blockId=LED block="LED %port toggle to $ledstate || brightness %brightness \\%"
+	//% brightness.min=0 brightness.max=100
+	//% ledstate.shadow="toggleOnOff"
+	//% expandableArgumentMode="toggle"
+	//% help=github:gigo-ddm/docs/led-brightness
 	export function ledBrightness(port: LedPortList, ledstate: boolean, brightness: number = 100): void {
 
 	switch(port){
@@ -281,8 +307,13 @@ namespace sensors {
 			
     		}
 	}
-	//% blockId="ForceSensor" block="Force sensor %port pushed"
-	export function ForceSensor (port: DualPortList): boolean {
+	/**
+	 * True while the force sensor is pressed.
+	 * @param port the dual port the force sensor is plugged into
+	 */
+	//% blockId="ForceSensor" block="force sensor %port pushed"
+	//% help=github:gigo-ddm/docs/force-sensor
+	export function forceSensor(port: DualPortList): boolean {
 		switch(port){	
 
 			case DualPortList.E:

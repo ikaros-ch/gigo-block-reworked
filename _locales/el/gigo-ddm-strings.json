@@ -1,0 +1,5 @@
+{
+    "sensors|block": "GIGO Κινητήρες",
+    "sensors.ddmMotor|block": "θέσε κινητήρα %motor σε ταχύτητα %speed \\\\%",
+    "sensors.stopAllMotor|block": "σταμάτησε όλους τους κινητήρες"
+}
